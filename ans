@@ -16,13 +16,11 @@ score_df = pd.DataFrame([[1,50,80,70,'boy',1],
               [14,50,50,50,'girl',3],
               [15,89,67,77,'girl',3]],columns=['student_id','math_score','english_score','chinese_score','sex','class'])
 
-data=score_df.groupby('class').max()
-print(data)
-data=score_df.groupby('class').min()
+data=score_df.max()
 print(data)
 
-data=score_df.groupby('student_id').mean()
+data=score_df.groupby('class').mean()
 print(data)
 
-data=score_df.groupby(['sex']).agg(['mean','std'])
+data=score_df.groupby('sex').mean()
 print(data)
